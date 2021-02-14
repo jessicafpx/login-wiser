@@ -1,24 +1,9 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+
 import Head from 'next/head';
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  html, body {
-    min-height: 100vh;
-  }
-`;
-
+import { GlobalStyle } from '../styles/global';
+import { ToastProvider } from '../src/hooks/toast'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -29,7 +14,9 @@ export default function App({ Component, pageProps }) {
         <title>Login</title>
       </Head>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <ToastProvider>
+        <Component {...pageProps} />
+      </ToastProvider>
     </>
   );
 }
