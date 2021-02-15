@@ -3,6 +3,8 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
+import { useRouter } from 'next/router';
+
 import Input from '../src/components/Input/index';
 
 import { useToast } from '../src/hooks/toast';
@@ -24,6 +26,7 @@ interface UserProps {
 export default function Home({ users }: UserProps) {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
+  const router = useRouter();
 
   const checkLogin = useCallback((data: User) => {
     const userExists = users.find((u) => {
@@ -38,6 +41,8 @@ export default function Home({ users }: UserProps) {
         title: 'Sucesso',
         description: 'Login realizado com sucesso!',
       });
+
+      router.push('/dashboard');
     }
     else {
       addToast({
@@ -50,7 +55,6 @@ export default function Home({ users }: UserProps) {
 
   const handleSubmit = useCallback(async (data: User) => {
     try {
-      console.log('foi')
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
