@@ -1,4 +1,4 @@
-import { Container, WelcomeText } from './styles';
+import { Container, WelcomeText } from '../../styles/dashboard';
 import { useRouter } from 'next/router';
 
 const Dashboard = () => {
