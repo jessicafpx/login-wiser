@@ -88,7 +88,7 @@ export default function Home({ users }: UserProps) {
       <Background />
       <Content>
         <AnimationContainer>
-          <Form ref={formRef} onSubmit={handleSubmit} translate={Form}>
+          <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Olá, seja bem-vindo!</h1>
             <h3>Para acessar a plataforma, faça seu login.</h3>
 
