@@ -1,28 +1,37 @@
-# TypeScript & Styled Components Next.js example
+# Login - Wiser
+Esta é uma aplicação para realizar login, desenvolvida para o teste da Wiser. O funcionamento consiste em preencher um formulário com e-mail e senha, validar os dados enviados e exibir feedback com um alerta de sucesso ou erro. Foi utilizado o MockAPI (<https://www.mockapi.io>) para fornecer os dados dos usuários para realizar o login.
+### Tecnologias utilizadas
+- NextJS;
+- React.js;
+- TypeScript;
+- Styled-Components;
+- React Hooks para manipular estados da aplicação, otimizar os ciclos de renderização e criar os toasts de feedback de login;
+- Axios para consumir a API externa;
+- Unform para lidar com formulários;
+- Yup para validação dos campos do formulário de login;
+- Eslint para configurar os padrões de escrita do código;
+- Commitizen para versionamento de código;
+- Jest para realização de testes da interface;
+- Utilização do conceito de responsividade, para adaptação do layout em diferentes dispositivos.
+## 🔧 Executar no seu PC
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+- Clone esse repositório;
+- Execute o comando para instalar as dependências, como  `yarn`;
+- Execute o comando para iniciar o projeto, por exemplo: `yarn dev`;
+- Acesse a aplicação em <strong> `http://localhost:3000`</strong>.
+- Para testar o login, utilize e-mail= <strong>jessica@mail.com</strong> e senha= <strong>jessica123</strong>
 
-## Deploy your own
+## 🤔 Como contribuir
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- Faça um fork desse repositório;
+- Crie uma branch com as suas alterações: `git checkout -b my-feature`;
+- Commit suas alterações: `git commit -m 'feat: my new feature'`;
+- Faça um push para a sua branch: `git push origin my-feature`.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
+## 📜 Licença
 
-## How to use it?
+> Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/jessicafpx/login-wiser/blob/main/LICENSE.md) para mais detalhes.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+---
 
-```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This is an amalgamation of the 2 existing examples:
-
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+##### <p align="center"> <strong> < desenvolvido por <a href="https://github.com/jessicafpx"> @jessicafpx</a> /> </strong> 👋
