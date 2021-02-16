@@ -1,20 +1,20 @@
 import { useCallback, useRef } from 'react';
+import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
+
+import { useDispatch } from 'react-redux';
+import { addUserAuth } from '../src/store/modules/userAuth/actions';
+
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import { useRouter } from 'next/router';
-
-import Input from '../src/components/Input/index';
-
 import { useToast } from '../src/hooks/toast';
-
+import Input from '../src/components/Input/index';
 import getValidationErrors from '../src/utils/getValidationErrors';
 
 import { Container, Background, Content, AnimationContainer } from '../styles/login';
-import { GetServerSideProps } from 'next';
 import api from '../src/services/api';
-
 interface User {
   email: string;
   password: string;
@@ -28,6 +28,8 @@ export default function Home({ users }: UserProps) {
   const { addToast } = useToast();
   const router = useRouter();
 
+  const dispatch = useDispatch();
+
   const checkLogin = useCallback((data: User) => {
     const userExists = users.find((u) => {
       if (u.email === data.email && u.password === data.password) {
@@ -36,6 +38,8 @@ export default function Home({ users }: UserProps) {
     });
 
     if (userExists) {
+      dispatch(addUserAuth(userExists));
+
       addToast({
         type: 'success',
         title: 'Sucesso',
@@ -51,7 +55,7 @@ export default function Home({ users }: UserProps) {
         description: 'Ocorreu um erro ao fazer login, tente novamente.',
       });
     }
-  }, []);
+  }, [dispatch]);
 
   const handleSubmit = useCallback(async (data: User) => {
     try {
@@ -71,7 +75,6 @@ export default function Home({ users }: UserProps) {
       checkLogin(data);
 
     } catch (err) {
-      console.log('errou', err)
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
 

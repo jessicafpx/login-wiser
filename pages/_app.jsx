@@ -3,7 +3,10 @@ import React from 'react';
 import Head from 'next/head';
 
 import { GlobalStyle } from '../styles/global';
-import { ToastProvider } from '../src/hooks/toast'
+import { ToastProvider } from '../src/hooks/toast';
+import { Provider } from 'react-redux';
+
+import store from '../src/store';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -14,9 +17,11 @@ export default function App({ Component, pageProps }) {
         <title>Login</title>
       </Head>
       <GlobalStyle />
-      <ToastProvider>
-        <Component {...pageProps} />
-      </ToastProvider>
+      <Provider store={store}>
+        <ToastProvider>
+          <Component {...pageProps} />
+        </ToastProvider>
+      </Provider>
     </>
   );
 }
