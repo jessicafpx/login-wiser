@@ -4,6 +4,7 @@ Esta é uma aplicação para realizar login, desenvolvida para o teste da Wiser.
 - NextJS;
 - React.js;
 - TypeScript;
+- Redux;
 - Styled-Components;
 - React Hooks para manipular estados da aplicação, otimizar os ciclos de renderização e criar os toasts de feedback de login;
 - Axios para consumir a API externa;
