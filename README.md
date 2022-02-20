@@ -35,4 +35,4 @@ Esta é uma aplicação para realizar login, desenvolvida para o teste da Wiser.
 
 ---
 
-##### <p align="center"> <strong> < desenvolvido por <a href="https://github.com/jessicafpx"> @jessicafpx</a> /> </strong> 👋
+##### <p align="center"> <strong> <desenvolvido por <a href="https://github.com/jessicafpx"> @jessicafpx</a> /> </strong> 👋
